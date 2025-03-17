@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 import pickle as pickle
+import os
 
 
 def create_model(data):
@@ -30,7 +31,9 @@ def create_model(data):
 
 
 def get_clean_data():
-    data = pd.read_csv("data\data.csv")
+    csv_path = os.path.join("data", "data.csv")
+
+    data = pd.read_csv(csv_path)
 
     data = data.drop(["Unnamed: 32", "id"], axis = 1)
 
