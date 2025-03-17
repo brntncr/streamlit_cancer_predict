@@ -7,7 +7,9 @@ import plotly.graph_objects as go
 
 
 def get_clean_data():
-    data = pd.read_csv("data\data.csv")
+    csv_path = os.path.join("data", "data.csv")
+
+    data = pd.read_csv(csv_path)
 
     data = data.drop(["Unnamed: 32", "id"], axis = 1)
 
